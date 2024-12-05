@@ -3,14 +3,14 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Pagina de Inicio</ion-title>
+    <ion-title>Página de Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
+      <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-content>
@@ -29,6 +29,9 @@
       <ion-item (click)="generateQRCode()">
         Generar código QR
       </ion-item>
+      <ion-item (click)="goToLogin()">
+        Volver al inicio de sesión
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -39,10 +42,20 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu</ion-title>
+      <ion-title>Menú</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <p></p>
+    
+    <div class="subject-box" #subjectBox>
+      <h2>Asignaturas</h2>
+      <ul>
+        <li>Arquitectura <span class="attendance">85%</span></li>
+        <li>Programación de aplicaciones móviles <span class="attendance">90%</span></li>
+        <li>Calidad de software <span class="attendance">80%</span></li>
+        <li>Portafolio <span class="attendance">95%</span></li>
+        <li>Estadística <span class="attendance">75%</span></li>
+      </ul>
+    </div>
   </ion-content>
 </div>

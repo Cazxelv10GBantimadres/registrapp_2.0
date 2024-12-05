@@ -1,0 +1,20 @@
+.subject-box {
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+    max-width: 80%; /* Establece el ancho máximo del elemento */
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .subject-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .subject-box ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .subject-box li {
+    margin-bottom: 5px;
+  }
