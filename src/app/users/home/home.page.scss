@@ -1,42 +1,86 @@
-#container {
-  text-align: center;
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --button-hover-color: #0056b3;
+  --font-family: 'Arial', sans-serif;
+}
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --background: var(--background-color);
 }
 
 .welcome-container {
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff; /* Color de fondo suave */
-  text-align: center; /* Centra el texto */
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .logo {
-  width: 45%;
+  width: 80px;
   height: auto;
   margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .welcome-title {
   font-size: 2rem;
-  margin-bottom: 10px;
   font-weight: bold;
-  background-color: #343870;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-family: var(--font-family);
 }
 
-.welcome-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.welcome-title span {
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+.cta-button {
+  width: 80%; /* Ancho ajustado */
+  max-width: 300px; /* Máximo ancho */
+  margin: 15px 0;
+  background-color: #007bff; /* Azul brillante */
+  color: white; /* Texto blanco */
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 30px; /* Sin bordes adicionales */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Azul más oscuro en hover */
+  transform: translateY(-2px); /* Levanta el botón ligeramente */
 }
 
 .account-text {
-  margin-top: 20px;
-  color: #6c757d; /* Color de texto secundario */
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin: 10px 0;
+  font-family: var(--font-family);
+}
+
+.register-button {
+  width: 40%;
+  max-width: 300px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
