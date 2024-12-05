@@ -21,14 +21,14 @@
 }
 
 .logo {
-  width: 45%; 
+  width: 80%; 
   height: auto; 
   margin-bottom: 20px; 
 }
 
 .welcome-title {
-  font-size: 1.5rem; 
-  margin-bottom: 10px; 
+  font-size: 1.8rem; 
+  margin-bottom: 15px; 
   font-weight: bold; 
   color: #343870; 
 }
@@ -36,33 +36,33 @@
 .login-item {
   --background: #dad9d9; 
   --border-radius: 8px; 
-  margin-bottom: 12px; 
-  padding-left: 8px; 
+  margin-bottom: 15px; 
+  padding: 8px; 
 }
 
 ion-input {
-  --padding-start: 10px; 
+  --padding-start: 12px; 
   --color: #333333; 
   --placeholder-color: #888888; 
 }
 
 .compact-button {
-  margin-top: 12px; 
+  margin-top: 15px; 
   width: 100%; 
-  font-size: 1rem; 
+  font-size: 1.2rem; 
   padding: 12px; 
-  background-color: #f1f1f1; 
+  background-color: #343870; 
   color: #ffffff; 
   border-radius: 8px; 
+  transition: background-color 0.3s; 
 }
 
-
 .compact-button:hover {
-  background-color: #343870; 
+  background-color: #1e1f28; 
 }
 
 .account-text {
-  margin-top: 20px; 
+  margin-top: 25px; 
   color: #6c757d; 
 }
 
