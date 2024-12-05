@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="welcome-container compact-container">
+    <img
+      alt="Logo RegistrApp"
+      class="logo compact-logo"
+      src="https://firebasestorage.googleapis.com/v0/b/proyect2-daf7b.appspot.com/o/Logo_RegistrApp.png?alt=media&token=bd36c9ff-e46a-442d-a830-22025ccb1e75"
+    />
+    <h1 class="welcome-title compact-title">Bienvenido</h1>
+    
+    <!-- Formulario de inicio de sesión -->
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" class="login-form compact-form">
+      <ion-item class="login-item compact-item" lines="none">
+        <ion-input
+          name="username"
+          type="text"
+          placeholder="Nombre de Usuario"
+          [(ngModel)]="loginData.username"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item class="login-item compact-item" lines="none">
+        <ion-input
+          name="password"
+          [type]="passwordTypeLogin"
+          placeholder="Contraseña"
+          [(ngModel)]="loginData.password"
+          required
+        ></ion-input>
+        <ion-icon
+          [name]="passwordIconLogin"
+          slot="end"
+          (click)="togglePassword()"
+        ></ion-icon>
+      </ion-item>
+      <ion-button
+        expand="block"
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="compact-button"
+      >
+        Iniciar Sesión
+      </ion-button>
+    </form>
+
+    <!-- Opciones adicionales -->
+    <h6 class="account-text compact-text">¿No tienes una cuenta?</h6>
+    <ion-button
+      expand="block"
+      fill="clear"
+      color="tertiary"
+      [routerLink]="['/register']"
+      class="compact-button"
+    >
+      Crear Cuenta
+    </ion-button>
+    <ion-button
+      expand="block"
+      fill="clear"
+      color="secondary"
+      [routerLink]="['/home']"
+      class="compact-button"
+    >
+      Volver a la Página Principal
+    </ion-button>
+  </div>
+</ion-content>
