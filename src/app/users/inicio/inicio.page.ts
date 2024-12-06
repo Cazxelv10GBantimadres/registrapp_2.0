@@ -31,12 +31,20 @@ export class InicioPage implements OnInit {
     // Lógica para escanear el código QR
   }
 
-  // Función para alternar la visibilidad del QR
-  toggleQRCode() {
+  // Función para alternar la visibilidad del QR y mostrar la alerta
+  async toggleQRCode() {
     this.isQRCodeVisible = !this.isQRCodeVisible; // Alterna la visibilidad del QR
+
+    // Mostrar alerta indicando que el QR ha sido generado exitosamente
+    const alert = await this.alertController.create({
+      header: 'Código QR Generado',
+      message: 'Código QR generado exitosamente.',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 
-  // Función para mostrar el QR en una alerta
+  // Función para mostrar el QR en una alerta (si se desea hacer esto aparte)
   async showQRCodeAlert() {
     const alert = await this.alertController.create({
       header: 'Código QR Generado',
