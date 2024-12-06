@@ -23,6 +23,7 @@
       <ion-list>
         <ion-item (click)="scanQRCode()">Escanear código QR</ion-item>
         <ion-item (click)="goToLogin()">Volver al inicio de sesión</ion-item>
+        <ion-item (click)="showCalendar()">Ver Calendario</ion-item> <!-- Botón para ver el calendario -->
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -58,6 +59,28 @@
           alt="Código QR"
           class="qr-image"
         />
+      </div>
+
+      <!-- Calendario (oculto inicialmente) -->
+      <div *ngIf="calendarVisible" class="calendar-container">
+        <div class="calendar-header">
+          <ion-button (click)="hideCalendar()" size="small">Volver al Inicio</ion-button>
+        </div>
+        <div class="calendar">
+          <div class="calendar-header">
+            <span>{{ currentMonth | date: 'MMMM y' }}</span>
+          </div>
+          <div class="calendar-days">
+            <div *ngFor="let day of daysInMonth" [ngClass]="{
+              'vacation': day.event === 'Vacaciones',
+              'class-day': day.event === 'Día de clases' || !day.event,
+              'event': day.event && day.event !== 'Vacaciones' && day.event !== 'Día de clases'
+            }">
+              <span>{{ day.day }}</span>
+              <div *ngIf="day.event" class="event">{{ day.event }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </ion-content>
   </div>

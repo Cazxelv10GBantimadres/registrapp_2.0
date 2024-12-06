@@ -59,3 +59,94 @@ ion-button:hover {
 ion-button:focus {
   --background: #1e60c3; /* Cambio de color cuando el botón está enfocado */
 }
+
+/* Estilos para el calendario */
+.calendar-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-days div {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+}
+
+.calendar-days div:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo para el botón "Volver al Inicio" */
+ion-button.small-button {
+  padding: 5px 10px;
+  font-size: 0.9em;
+  --background: #3880ff;
+  --color: white;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-button.small-button:hover {
+  --background: #3171e0;
+}
+
+ion-button.small-button:focus {
+  --background: #1e60c3;
+}
+
+/* Estilo para los días del calendario */
+.calendar-days div {
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 14px;
+}
+
+/* Estilo para los días con eventos */
+.event {
+  font-size: 12px;
+  color: #ff5722;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* Estilo para los días de "vacaciones" */
+.vacation {
+  background-color: #ffeb3b;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Estilo para los días de clase */
+.class-day {
+  background-color: #81c784;
+  color: white;
+}
+
+/* Estilo para el texto de los días */
+.calendar-days div span {
+  display: block;
+  margin-top: 5px;
+}
