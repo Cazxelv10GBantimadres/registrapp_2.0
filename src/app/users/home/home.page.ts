@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,7 +10,12 @@ export class HomePage {
 
   constructor(private router: Router) {}
   
-    navigateToLogin() {
-      this.router.navigate(['/login']);
-    }
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  // Función para navegar a la página de registro
+  navigateToRegister() {
+    this.router.navigate(['/register']);
+  }
 }

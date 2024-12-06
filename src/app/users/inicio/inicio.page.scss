@@ -1,20 +1,61 @@
+/* Estilo para la caja de asignaturas */
 .subject-box {
-    margin: 0 auto; /* Centra el elemento horizontalmente */
-    max-width: 80%; /* Establece el ancho máximo del elemento */
-    padding: 20px;
-    background-color: #f1f1f1;
-  }
-  
-  .subject-box h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .subject-box ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .subject-box li {
-    margin-bottom: 5px;
-  }
+  margin: 0 auto; /* Centra el elemento horizontalmente */
+  max-width: 80%; /* Establece el ancho máximo del elemento */
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+}
+
+.subject-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.subject-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.subject-box li {
+  margin-bottom: 5px;
+}
+
+/* Estilo para el contenedor del QR */
+.qr-container {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 2px solid #ccc; /* Línea divisoria */
+  padding-top: 20px;
+}
+
+.qr-image {
+  max-width: 200px; /* Limita el tamaño de la imagen */
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilo para el botón que genera el código QR */
+ion-button {
+  margin-top: 20px;
+  width: auto; /* Ajusta el tamaño automáticamente */
+  max-width: 250px; /* Ancho máximo */
+  padding: 10px 20px; /* Ajuste en el padding para que no sea tan grande */
+  height: 40px; /* Ajusta la altura para hacerlo más pequeño */
+  --background: #3880ff;
+  --color: white;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin-left: auto;
+  margin-right: auto; /* Centra el botón */
+}
+
+ion-button:hover {
+  --background: #3171e0; /* Cambio de color al pasar el ratón */
+}
+
+ion-button:focus {
+  --background: #1e60c3; /* Cambio de color cuando el botón está enfocado */
+}

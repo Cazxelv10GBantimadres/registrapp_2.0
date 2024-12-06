@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Animation, AnimationController } from '@ionic/angular';
+import { Animation, AnimationController, AlertController } from '@ionic/angular'; // Añadir AlertController
 
 @Component({
   selector: 'app-inicio',
@@ -9,8 +9,15 @@ import { Animation, AnimationController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
   @ViewChild('subjectBox', { read: ElementRef }) subjectBox!: ElementRef;
+  isQRCodeVisible: boolean = false; // Controla si el QR se muestra o no
 
-  constructor(private router: Router, private animationCtrl: AnimationController) {}
+  qrCodeImage: string = 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png'; // URL del código QR
+
+  constructor(
+    private router: Router,
+    private animationCtrl: AnimationController,
+    private alertController: AlertController // Inyectamos AlertController
+  ) {}
 
   ngOnInit() {
     // Llama a animateSubjectBox después de que la vista se haya inicializado
@@ -24,21 +31,32 @@ export class InicioPage implements OnInit {
     // Lógica para escanear el código QR
   }
 
-  generateQRCode() {
-    console.log('Generar código QR');
-    // Lógica para generar el código QR
+  // Función para alternar la visibilidad del QR
+  toggleQRCode() {
+    this.isQRCodeVisible = !this.isQRCodeVisible; // Alterna la visibilidad del QR
   }
 
+  // Función para mostrar el QR en una alerta
+  async showQRCodeAlert() {
+    const alert = await this.alertController.create({
+      header: 'Código QR Generado',
+      message: '<img src="' + this.qrCodeImage + '" alt="QR Code" style="width: 100%; max-width: 200px;">',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
+  // Modificación aquí para redirigir a la página de login
   goToLogin() {
-    this.router.navigate(['/register']); 
+    this.router.navigate(['/login']);  // Redirige a la página de login
   }
 
- animateSubjectBox() {
-  const animation: Animation = this.animationCtrl.create()
-    .addElement(this.subjectBox.nativeElement)
-    .duration(0) // Establece la duración a 0 para que no haya animación
-    .fromTo('transform', 'translateX(0)', 'translateX(0)'); // Mantén la transformación en la posición original
-    
-  animation.play();
-}
+  animateSubjectBox() {
+    const animation: Animation = this.animationCtrl.create()
+      .addElement(this.subjectBox.nativeElement)
+      .duration(0) // Establece la duración a 0 para que no haya animación
+      .fromTo('transform', 'translateX(0)', 'translateX(0)'); // Mantén la transformación en la posición original
+
+    animation.play();
+  }
 }
