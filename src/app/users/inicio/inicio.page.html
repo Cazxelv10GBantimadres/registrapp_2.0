@@ -8,11 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar>
@@ -22,8 +17,9 @@
     <ion-content class="ion-padding">
       <ion-list>
         <ion-item (click)="scanQRCode()">Escanear código QR</ion-item>
-        <ion-item (click)="goToLogin()">Volver al inicio de sesión</ion-item>
-        <ion-item (click)="showCalendar()">Ver Calendario</ion-item> <!-- Botón para ver el calendario -->
+        <ion-item (click)="goToGenerateQR()">Generar Código QR</ion-item>
+        <ion-item (click)="showCalendar()">Ver Calendario</ion-item>
+        <ion-item (click)="goToLogin()">Cerrar Sesión</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -49,19 +45,7 @@
         </ul>
       </div>
 
-      <!-- Botón que muestra/oculta el código QR -->
-      <ion-button (click)="toggleQRCode()">Generar Código QR</ion-button>
-
-      <!-- Imagen del código QR (visible solo cuando isQRCodeVisible es true) -->
-      <div *ngIf="isQRCodeVisible" class="qr-container">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png"
-          alt="Código QR"
-          class="qr-image"
-        />
-      </div>
-
-      <!-- Calendario (oculto inicialmente) -->
+      <!-- Calendario -->
       <div *ngIf="calendarVisible" class="calendar-container">
         <div class="calendar-header">
           <ion-button (click)="hideCalendar()" size="small">Volver al Inicio</ion-button>

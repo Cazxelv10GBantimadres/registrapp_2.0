@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Animation, AnimationController, AlertController } from '@ionic/angular'; // Aseguramos que estas dependencias están bien importadas
+import { Animation, AnimationController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
@@ -39,22 +39,9 @@ export class InicioPage implements OnInit {
     // Si tienes un plugin de escaneo QR, esta es la función para invocar
   }
 
-  // Función para alternar la visibilidad del QR
-  toggleQRCode() {
-    this.isQRCodeVisible = !this.isQRCodeVisible; // Alterna la visibilidad del QR
-
-    // Mostrar alerta indicando que el QR ha sido generado exitosamente
-    this.showQRCodeAlert();
-  }
-
-  // Función para mostrar el QR en una alerta
-  async showQRCodeAlert() {
-    const alert = await this.alertController.create({
-      header: 'Código QR Generado',
-      message: 'Código QR generado exitosamente.',
-      buttons: ['OK'],
-    });
-    await alert.present();
+  // Redirige a la página de generar QR
+  goToGenerateQR() {
+    this.router.navigate(['/generate-qr']); // Redirige a la página de generación de QR
   }
 
   // Función para mostrar/ocultar el calendario
@@ -79,17 +66,17 @@ export class InicioPage implements OnInit {
 
       // Asignar eventos específicos para algunos días
       if (i === 5) {
-        event = "Prueba de Matemáticas";
+        event = 'Prueba de Matemáticas';
       } else if (i === 10) {
-        event = "Entrega de Proyecto de Programación";
+        event = 'Entrega de Proyecto de Programación';
       } else if (i === 15) {
-        event = "Revisión de Proyecto de Calidad";
+        event = 'Revisión de Proyecto de Calidad';
       } else if (i === 20) {
-        event = "Último día de clases";
+        event = 'Último día de clases';
       } else if (i >= 21) {
-        event = "Vacaciones";
+        event = 'Vacaciones';
       } else {
-        event = "Día de clases"; // Otros días son días de clases normales
+        event = 'Día de clases'; // Otros días son días de clases normales
       }
 
       daysInMonth.push({ day: i, event: event });
@@ -100,15 +87,15 @@ export class InicioPage implements OnInit {
 
   // Redirige a la página de login
   goToLogin() {
-    this.router.navigate(['/login']);  // Redirige a la página de login
+    this.router.navigate(['/login']); // Redirige a la página de login
   }
 
   // Animación para la caja de asignaturas
   animateSubjectBox() {
     const animation: Animation = this.animationCtrl.create()
       .addElement(this.subjectBox.nativeElement)
-      .duration(0) // Establece la duración a 0 para que no haya animación
-      .fromTo('transform', 'translateX(0)', 'translateX(0)'); // Mantén la transformación en la posición original
+      .duration(0) // Duración de la animación
+      .fromTo('transform', 'translateX(-100%)', 'translateX(0)'); // Animación de entrada
 
     animation.play();
   }

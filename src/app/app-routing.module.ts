@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./users/register/register.module').then(m => m.RegisterPageModule)
   },
+  {
+    path: 'generate-qr',
+    loadChildren: () => import('./generate-qr/generate-qr.module').then( m => m.GenerateQRPageModule)
+  },
+
   
 ];
 
