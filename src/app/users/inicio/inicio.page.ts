@@ -17,6 +17,17 @@ export class InicioPage implements OnInit {
   currentMonth: Date = new Date(); // Fecha actual
   daysInMonth: { day: number, event: string | null }[] = []; // Días del mes con eventos
 
+  // Propiedad para controlar el modo oscuro
+  isDarkMode: boolean = false; // Modo oscuro desactivado por defecto
+
+  // Datos del clima (puedes hacer esto dinámico si deseas)
+  weatherData = {
+    location: 'Santiago, Chile',
+    temperature: 32, // en grados Celsius
+    description: 'Soleado',
+    icon: 'sunny', // Icono representativo del clima
+  };
+
   constructor(
     private router: Router,
     private animationCtrl: AnimationController,
@@ -30,6 +41,7 @@ export class InicioPage implements OnInit {
     }, 1000); // Espera 1 segundo antes de animar el elemento
 
     this.loadDaysInMonth(); // Cargar los días del mes actual al inicializar
+    this.applyTheme(); // Aplica el tema al iniciar
   }
 
   // Función para escanear el código QR
@@ -98,5 +110,20 @@ export class InicioPage implements OnInit {
       .fromTo('transform', 'translateX(-100%)', 'translateX(0)'); // Animación de entrada
 
     animation.play();
+  }
+
+  // Función para aplicar el tema claro/oscuro
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    this.applyTheme();
+  }
+
+  // Aplicar el tema según el estado del switch
+  applyTheme() {
+    if (this.isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
   }
 }

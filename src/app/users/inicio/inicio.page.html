@@ -4,6 +4,12 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Página de Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-label>Modo Oscuro</ion-label>
+        <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+      </ion-item>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -34,6 +40,24 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
+      <!-- Widget del Clima -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Clima Actual</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="weather-info">
+            <ion-icon [name]="weatherData.icon" size="large"></ion-icon>
+            <div class="weather-details">
+              <h2>{{ weatherData.temperature }}°C</h2>
+              <p>{{ weatherData.description }}</p>
+              <p>{{ weatherData.location }}</p>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Caja de Asignaturas -->
       <div class="subject-box" #subjectBox>
         <h2>Asignaturas</h2>
         <ul>

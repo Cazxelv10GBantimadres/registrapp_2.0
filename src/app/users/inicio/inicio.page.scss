@@ -1,9 +1,24 @@
+/* Estilos generales para el modo oscuro */
+body.dark {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+  --ion-item-background: #1e1e1e;
+  --ion-item-text-color: #ffffff;
+  --ion-toggle-background: #3b3b3b;
+  --ion-toggle-checked-background: #6200ee;
+  --ion-toolbar-background: #333;
+  --ion-toolbar-color: #ffffff;
+  --ion-menu-background: #222;
+  --ion-menu-text-color: #ffffff;
+}
+
 /* Estilo para la caja de asignaturas */
 .subject-box {
   margin: 0 auto; /* Centra el elemento horizontalmente */
   max-width: 80%; /* Establece el ancho máximo del elemento */
   padding: 20px;
-  background-color: #f1f1f1;
+  background-color: var(--ion-item-background); /* Fondo que cambia con el modo oscuro */
+  color: var(--ion-text-color); /* Color del texto que cambia con el modo oscuro */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
 }
@@ -11,6 +26,7 @@
 .subject-box h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
+  color: var(--ion-text-color); /* Color del título */
 }
 
 .subject-box ul {
@@ -20,6 +36,7 @@
 
 .subject-box li {
   margin-bottom: 5px;
+  color: var(--ion-text-color); /* Color de los items */
 }
 
 /* Estilo para el contenedor del QR */
@@ -64,7 +81,8 @@ ion-button:focus {
 .calendar-container {
   margin-top: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--ion-item-background); /* Fondo que cambia con el modo oscuro */
+  color: var(--ion-text-color); /* Color del texto que cambia con el modo oscuro */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
