@@ -10,7 +10,7 @@
 <ion-content class="ion-padding">
   <div class="qr-container">
     <h2>Generar Código QR</h2>
-    <ion-button (click)="generateQRCode()">Generar Código QR</ion-button>
+    <ion-button expand="block" class="small-button" (click)="generateQRCode()">Generar Código QR</ion-button>
     <div *ngIf="isQRCodeVisible" class="qr-container">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png"
